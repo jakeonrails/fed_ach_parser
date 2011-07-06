@@ -25,7 +25,7 @@ def create_institution_from_line(line)
 end
 
 FED_ACH_URL = "#{Dir.pwd}/FedACHdir.txt"
-#"http://www.fededirectory.frb.org/FedACHdir.txt"
+FED_ACH_URL = "http://www.fededirectory.frb.org/FedACHdir.txt"
 def process_feed
   # wrap in a transaction to improve performance.
   Institution.transaction do
@@ -37,8 +37,8 @@ def process_feed
   end
 end
 
-prepare_database
 time = Benchmark.realtime do
+  prepare_database
   process_feed
 end
 
