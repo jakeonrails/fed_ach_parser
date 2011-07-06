@@ -24,7 +24,8 @@ def create_institution_from_line(line)
   end
 end
 
-FED_ACH_URL = "#{Dir.pwd}/FedACHdir.txt"
+# Swap these comments and download FedACHdir.txt to local directory to skip download step for local testing.
+#FED_ACH_URL = "#{Dir.pwd}/FedACHdir.txt"
 FED_ACH_URL = "http://www.fededirectory.frb.org/FedACHdir.txt"
 def process_feed
   # wrap in a transaction to improve performance.
